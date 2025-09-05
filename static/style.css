@@ -1,0 +1,39 @@
+
+    /* Centrer le contenu */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #f0f0f0;
+    }
+    /* Container for buttons and canvas */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    /* Style des boutons */
+    button {
+      padding: 8px 16px;
+      font-size: 32px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #333;
+      color: white;
+    }
+    /* Canvas stylée */
+    canvas {
+      background: black;
+      image-rendering: pixelated;
+      width: 460px;
+      height: 460px;
+      border: 2px solid #333;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+  
