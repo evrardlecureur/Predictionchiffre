@@ -1,7 +1,7 @@
 # Predictionchiffre
 
 Projet de prédiction de chiffres écrit à la main.
-Le site permet de tester un modèle de machine learning fait sur un notebook kaggle(mettre le lien), pour prédire les chiffres que tu dessines.
+Le site permet de tester un modèle de machine learning fait sur un notebook kaggle( https://www.kaggle.com/evrardle ), pour prédire les chiffres que tu dessines.
 Pour l'utiliser il suffit de cloner le repo: 
 
 git clone https://github.com/evrardlecureur/Predictionchiffre.git  
