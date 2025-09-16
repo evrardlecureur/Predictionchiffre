@@ -20,7 +20,7 @@ lancer le serveur flask :
  
 python APIpython.py
 
-puis ouvrir le site avec quelque chose comme ( ecrit sur la bash ) :
+puis ouvrir le site avec quelque chose comme ( ecrit sur le terminal) :
 
 http://127.0.0.1:5000
 
