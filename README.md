@@ -1,26 +1,23 @@
-# Predictionchiffre
+# 🔢 Digit Recognizer - AI Prediction
 
-Projet de prédiction de chiffres écrit à la main.
-Le site permet de tester un modèle de machine learning fait sur un notebook kaggle( https://www.kaggle.com/evrardle ), pour prédire les chiffres que tu dessines ( cf : https://youtu.be/vE0Z3uJddes ) .
-Pour l'utiliser il suffit de cloner le repo: 
+Ce projet utilise le Deep Learning pour reconnaître des chiffres écrits à la main (0-9). Le modèle a été entraîné sur un notebook Kaggle (disponible [ici](https://www.kaggle.com/evrardle)) et permet de tester l'IA en temps réel.
 
-git clone https://github.com/evrardlecureur/Predictionchiffre.git  
+---
 
-cd PredictionChiffre
+## 🚀 Deux façons de tester le projet
 
-installer les dépandances python : 
+### 1. Version Web (Streamlit) - **Recommandé**
+Accédez directement à l'interface de prédiction en ligne, sans aucune installation requise.
 
-pip install Flask
+👉 **[Tester l'application en ligne](https://predictionchiffre.streamlit.app/)**
 
-pip install numpy
+---
 
-pip install tensorflow
+### 2. Version Locale (Flask)
+Idéal pour comprendre comment le modèle communique avec une API locale.
 
-lancer le serveur flask : 
- 
-python APIpython.py
-
-puis ouvrir le site avec quelque chose comme ( ecrit sur le terminal) :
-
-http://127.0.0.1:5000
-
+#### Installation
+1. **Cloner le projet** :
+   ```bash
+   git clone [https://github.com/evrardlecureur/Predictionchiffre.git](https://github.com/evrardlecureur/Predictionchiffre.git)
+   cd Predictionchiffre
