@@ -76,7 +76,7 @@ with col2:
                 
                 st.bar_chart(chart_data)
 
-                if confidence < 0.7:
+                if confidence < 80:
                     st.write("L'IA n'est pas sûre !!")
        
 
