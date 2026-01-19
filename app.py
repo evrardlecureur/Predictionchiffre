@@ -65,23 +65,22 @@ with col2:
                 st.subheader("ma réponse :")
                 st.header(f"je pense que c'est un **{result}**")
                 
-                # diagramme des probabilités (ce que le modèle renvoie réellement)
-                # on transforme les sorties du .h5 en tableau lisible
+                # affichage du pourcentage de confiance
+                st.write(f"indice de confiance : **{confidence:.2f}%**")
+                
+                # préparation des données pour le diagramme
                 chart_data = pd.DataFrame(
                     probs, 
                     index=[str(i) for i in range(10)], 
                     columns=["confiance"]
                 )
                 
-                st.write("voici comment mon cerveau a analysé ton tracé :")
                 st.bar_chart(chart_data)
 
                 if confidence < 70:
                     st.write("je ne suis pas très sûr de moi sur ce coup-là...")
         else:
             st.info("à vous de jouer, dessinez quelque chose à gauche.")
-
-
 
 st.markdown("---")
 st.caption("application de démonstration • 2026")
