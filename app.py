@@ -6,7 +6,7 @@ import cv2
 import pandas as pd
 
 # configuration
-st.set_page_config(page_title="reconnaissance de chiffres", layout="wide")
+st.set_page_config(page_title="Digit Recognizer", layout="wide")
 
 if "canvas_key" not in st.session_state:
     st.session_state.canvas_key = 0
@@ -20,13 +20,12 @@ def load_app_engine():
 
 engine = load_app_engine()
 
-st.title("dessine-moi un chiffre")
-st.write("écrivez un chiffre dans la zone noire, et je vais essayer de le reconnaître.")
+st.title("Déssinez un chiffre ( 0 - 9 )")
+st.write("écrivez un chiffre dans la zone noire, et je vais essayer de le prédire.")
 
-with st.expander("comment obtenir un bon résultat ?"):
+with st.expander("Sur quoi a t-il été entrainé ?"):
     st.image("https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png", 
-             caption="exemples de tracés optimaux", width=350)
-    st.info("astuce : dessinez un chiffre assez grand et bien centré pour une reconnaissance précise.")
+             caption="exemples de la data base", width=350)
 
 st.markdown("---")
 
@@ -45,7 +44,7 @@ with col1:
         key=f"canvas_{st.session_state.canvas_key}",
     )
     
-    if st.button("effacer", on_click=reset_canvas):
+    if st.button("Delete", on_click=reset_canvas):
         st.rerun()
 
 with col2:
@@ -62,8 +61,8 @@ with col2:
                 result = np.argmax(probs)
                 confidence = np.max(probs) * 100
                 
-                st.subheader("ma réponse :")
-                st.header(f"je pense que c'est un **{result}**")
+                st.subheader("Prédiction :")
+                st.header(f"c'est un **{result}**")
                 
                 # affichage du pourcentage de confiance
                 st.write(f"indice de confiance : **{confidence:.2f}%**")
@@ -72,15 +71,14 @@ with col2:
                 chart_data = pd.DataFrame(
                     probs, 
                     index=[str(i) for i in range(10)], 
-                    columns=["confiance"]
+                    columns=["certitude"]
                 )
                 
                 st.bar_chart(chart_data)
 
-                if confidence < 70:
-                    st.write("je ne suis pas très sûr de moi sur ce coup-là...")
-        else:
-            st.info("à vous de jouer, dessinez quelque chose à gauche.")
+                if confidence < 0.7:
+                    st.write("L'IA n'est pas sûre !!")
+       
 
 st.markdown("---")
-st.caption("application de démonstration • 2026")
+st.caption("Page de démonstration @Evrard LECUREUR • 2026")
