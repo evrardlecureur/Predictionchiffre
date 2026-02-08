@@ -20,7 +20,7 @@ def load_app_engine():
 
 engine = load_app_engine()
 
-st.title("Déssiner un chiffre ( 0 - 9 )")
+st.title("Desiner un chiffre ( 0 - 9 )")
 st.write("écrivez un chiffre dans la zone noire, et je vais essayer de le prédire.")
 
 with st.expander("Sur quoi a t-il été entrainé ?"):
