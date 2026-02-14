@@ -54,7 +54,7 @@ with col2:
         if np.any(img > 0):
             img_gray = cv2.cvtColor(img, cv2.COLOR_RGBA2GRAY)
             img_rescaled = cv2.resize(img_gray, (28, 28), interpolation=cv2.INTER_AREA)
-            features = img_rescaled.reshape(1, 784).astype('float32') / 255.0
+            features = img_rescaled.reshape(1,28,28,1).astype('float32') / 255.0
 
             if st.button('identifier', type="primary"):
                 probs = engine.predict(features, verbose=0)[0] 
